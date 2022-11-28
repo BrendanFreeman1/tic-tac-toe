@@ -20,7 +20,7 @@ def StartGame()
     next_marker_location = GetPlayerInput(current_player, game_array)
 
     #Add players selection to the game_array
-    update_array(game_array, current_player, next_marker_location)
+    UpdateArray(game_array, current_player, next_marker_location)
 
     #Check if anyone has won
     game_over = CheckWinState(game_array)
@@ -42,7 +42,7 @@ def EndGame(current_player)
   end
 end
 
-def update_array(game_array, current_player, next_marker_location)
+def UpdateArray(game_array, current_player, next_marker_location)
   current_player == 1 ? marker = "X" : marker = "O"
 
   game_array[next_marker_location - 1] = marker
@@ -88,14 +88,14 @@ def CheckWinState(game_array)
     return true
   when game_array[1] == game_array[4] && game_array[1] == game_array[7]
     return true
-  when game_array[2] == game_array[5] && game_array[2] == game_array[5]
+  when game_array[2] == game_array[5] && game_array[2] == game_array[8]
     return true
-  when game_array[0] == game_array[4] && game_array[01] == game_array[8]
+  when game_array[0] == game_array[4] && game_array[0] == game_array[8]
     return true
   when game_array[2] == game_array[4] && game_array[2] == game_array[6]
     return true
   else
-    return false
+    return false 
   end
 end
 
