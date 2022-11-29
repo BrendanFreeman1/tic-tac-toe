@@ -14,8 +14,9 @@ end
 
 # <summery>Represents an instance if the game<summery>
 class TicTacToe
+  WIN_STATES = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]].freeze
+
   def initialize
-    @@WIN_STATES = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 5, 9], [3, 5, 7], [1, 4, 7], [2, 5, 8], [3, 6, 9]]
     @board = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     @game_over = false
     @tie = false
@@ -43,7 +44,6 @@ class TicTacToe
     display_board
     end_game
   end
-
 
   private
 
