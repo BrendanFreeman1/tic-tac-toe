@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 # <summery>Represents a player for the game<summery>
-# <param name="id">Identifier for this class instance<param>
+# <param name="name">Identifier for this class instance<param>
 # <param name="marker">The Marker placed on the game board for this class instance<param>
 class Player
   attr_reader :name, :marker
