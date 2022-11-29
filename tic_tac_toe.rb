@@ -4,10 +4,10 @@
 # <param name="id">Identifier for this class instance<param>
 # <param name="marker">The Marker placed on the game board for this class instance<param>
 class Player
-  attr_reader :id, :marker
+  attr_reader :name, :marker
 
-  def initialize(id, marker)
-    @id = id
+  def initialize(name, marker)
+    @name = name
     @marker = marker
   end
 end
@@ -26,8 +26,8 @@ class TicTacToe
   end
 
   def start_game
-    puts "#{@player_one.id} marker is - #{@player_one.marker}"
-    puts "#{@player_two.id} marker is - #{@player_two.marker}"
+    puts "#{@player_one.name} marker is - #{@player_one.marker}"
+    puts "#{@player_two.name} marker is - #{@player_two.marker}"
 
     until @game_over
 
@@ -51,7 +51,7 @@ class TicTacToe
     if @tie
       puts 'The Game is a tie'
     else
-      puts "#{@current_player.id} is the winner"
+      puts "#{@current_player.name} is the winner"
     end
 
     puts 'Do you want to play again? Y/N'
@@ -65,7 +65,7 @@ class TicTacToe
   end
 
   def next_marker_location
-    puts "#{@current_player.id} please enter the location you would like to place your marker:"
+    puts "#{@current_player.name} please enter the location you would like to place your marker:"
     correct_input = false
 
     until correct_input
@@ -94,7 +94,7 @@ class TicTacToe
   end
 
   def check_win_state
-    @@WIN_STATES.any? do |sequence|
+    WIN_STATES.any? do |sequence|
       return true if sequence.all? { |position| @board[position - 1] == @current_player.marker }
     end
 
